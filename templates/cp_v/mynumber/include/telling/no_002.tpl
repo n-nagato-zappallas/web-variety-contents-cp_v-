@@ -1,0 +1,17 @@
+                  <ul>
+                    <li>{$next_list[0]['menu_min_title'][1]}</li>
+                    <li>{$next_list[0]['menu_min_title'][2]}</li>
+                    <li>{$next_list[0]['menu_min_title'][3]}</li>
+                    <li>{$next_list[0]['menu_min_title'][4]}</li>
+                    <li>{$next_list[0]['menu_min_title'][5]}</li>
+                    <li>{$next_list[0]['menu_min_title'][6]}</li>
+                    <li>{$next_list[0]['menu_min_title'][7]}</li>
+                    <li>{$next_list[0]['menu_min_title'][8]}</li>
+                    <li>{$next_list[0]['menu_min_title'][9]}</li>
+                    <li>{$next_list[0]['menu_min_title'][10]}</li>
+                    <li>{$next_list[0]['menu_min_title'][11]}</li>
+                    <li>{$next_list[0]['menu_min_title'][12]}</li>
+                    <li>{$next_list[0]['menu_min_title'][13]}</li>
+                    <li>{$next_list[0]['menu_min_title'][14]}</li>
+                    <li>{$next_list[0]['menu_min_title'][15]}</li>
+                  </ul>

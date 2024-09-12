@@ -1,0 +1,9 @@
+{
+    "require": {
+        "pear/db": "^1.12",
+        "smarty/smarty": "4.3.2",
+        "halilim/xml-iterator": "^1.0",
+        "ext-simplexml": "*"
+    }
+
+}

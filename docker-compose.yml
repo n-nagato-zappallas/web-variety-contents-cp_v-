@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  php:
+    container_name: run-php-app
+    build: .
+    image: php:8.2-apache
+    ports:
+      - "18080:80"
+    volumes:
+    - ../:/var/www/html # ホスト側のディレクトリをコンテナ側にマウント(ローカルのパスを指定してください)
+
+    networks:
+      - php-network
+    depends_on:
+      - mysql
+    environment:
+    - APACHE_DOCUMENT_ROOT=/var/www/html
+    - APACHE_DIRECTORY_INDEX=index.php index.html  # DirectoryIndexディレクティブの設定
+  apache:
+    # build: ./
+    image: php:8.2-apache
+    container_name: run-input-app
+    ports:
+      - "8088:80"
+    # privileged: true
+    volumes:
+      # - ../htdocs/public/cp_v/oshi/:/var/www/html/
+      - ./htdocs/public/cp_v/:/var/www/html/
+
+  mysql:
+    image: mysql:8.0
+    container_name: run-mysql
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cp_v
+      MYSQL_USER: cp_v
+      MYSQL_PASSWORD: cp_v
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - php-network
+  php-adminer:
+    image: adminer:4.8.1
+    container_name: adminer
+    ports:
+      - "8081:8080"
+    networks:
+      - php-network
+    depends_on:
+      - mysql
+
+volumes:
+  mysql-data:
+
+networks:
+  php-network:
